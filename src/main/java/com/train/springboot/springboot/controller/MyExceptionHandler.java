@@ -33,7 +33,11 @@ public class MyExceptionHandler {
         request.setAttribute("javax.servlet.error.status_code",500);
         map.put("code","user not exist");
         map.put("message",e.getMessage());
-        return "/error";
+        map.put("exception",e);
+        map.put("abc","ccc");
+
+        request.setAttribute("ext",map);
+        return "forward:/error";
     }
 
 }
