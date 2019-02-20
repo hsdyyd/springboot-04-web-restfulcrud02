@@ -23,7 +23,7 @@ public class HelloController {
     @RequestMapping("/hello")
     public String hello(@RequestParam("user") String user){
         if(user.equals("aaa")){
-            throw new UserNotExistException();
+           throw new UserNotExistException();
         }
 
         return "hello world!";
