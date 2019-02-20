@@ -24,21 +24,6 @@ public class MyConfig implements WebMvcConfigurer {
 
     }
 
-    /*
-        springboot2.x之前使用EmbeddedServletContainerCustomizer
-        定制servlet容器配置的第二种方式
-     */
-    @Bean
-    public WebServerFactoryCustomizer<ConfigurableWebServerFactory> webServerFactoryCustomizer(){
-        return new WebServerFactoryCustomizer<ConfigurableWebServerFactory>() {
-            @Override
-            public void customize(ConfigurableWebServerFactory factory) {
-                factory.setPort(8088);
-
-            }
-        };
-    }
-
     @Bean
     public WebMvcConfigurer webMvcConfigurer(){
         WebMvcConfigurer webMvcConfigurer = new WebMvcConfigurer() {
